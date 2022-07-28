@@ -10,11 +10,12 @@ body{
 
 .container{
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: hsl(233, 47%, 7%);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.875rem 0px;
   .card{
     width: 20.3125rem;
     height: 47.8125rem;
@@ -72,77 +73,62 @@ body{
     }
     .img{
       width: 100%;
-      position: relative;
+      border-top-left-radius: .625rem;
+      border-top-right-radius: .625rem;
+      background-color: hsl(277, 64%, 61%);
+      opacity: .75;
       order: 0;
       img{
         width: 100%;
         height: 100%;
         border-top-left-radius: .625rem;
         border-top-right-radius: .625rem;        
+        mix-blend-mode: multiply;
       }
-      &::after{
-        content: '';
-        position: absolute;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        background-color: hsl(277, 64%, 61%);
-        border-top-left-radius: .625rem;
-        border-top-right-radius: .625rem;
-        opacity: .5;
-      }
+      
     }
   }
 }
 
 @media only screen and(min-width: 992px){
   .container{
+    padding: 0px;
     .card{
-      width: 1200px;
-      height: 450px;
+      width: 68.75rem;
+      height: 28.125rem;
       flex-direction: row;
       .info{
         width: 40%;
-        padding: 60px;
+        padding: 3.75rem;
         text-align: left;
         order: 0;
         .title{
           font-size: 2.2rem;
-          width: 400px;
+          width: 25rem;
         }
         .text{
-          width: 400px;
+          width: 25rem;
           padding: 0px;
         }
         .stats{
           flex-direction: row;
           margin-top: 80px;
-          gap: 50px;
+          gap: 3.125rem;
           .results{
             align-items: flex-start;
           }
         }
       }
       .img{
-        width: 50%;
-        position: relative;
+        width: 55%;
+        border-bottom-right-radius: .625rem;
+        border-top-right-radius: .625rem;  
+        border-top-left-radius: 0;
         order: 0;
         img{
           border-bottom-right-radius: .625rem;
           border-top-right-radius: .625rem;  
           border-top-left-radius: 0;      
-        }
-        &::after{
-          content: '';
-          position: absolute;
-          left: 0px;
-          width: 100%;
-          height: 100%;
-          background-color: hsl(277, 64%, 61%);
-          border-bottom-right-radius: .625rem;
-          border-top-right-radius: .625rem;
-          border-top-left-radius: 0; 
-          opacity: .5;
         }
       }
     }
